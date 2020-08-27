@@ -11,17 +11,20 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp(name="Basic TeleOp", group="Apex Robotics 3916")
 //@Disabled
-public class TeleOp_Basic extends OpMode {
+public class TeleOp_Basic extends TeleDrive {
 
     private Robot bot = new Robot();
 
     @Override
     public void init() {
+        super.init();
         bot.init(hardwareMap, Robot.DriveType.Mechanum);
     }
 
     @Override
     public void loop() {
+        super.loop();
+
         final double STICK_DEAD_ZONE = 0.1;
 
         double x = 0;
